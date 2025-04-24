@@ -29,11 +29,13 @@ An employee named John Doe, working in a sensitive department, was recently plac
      ```
      ```kql
      DeviceFileEvents
-     | where DeviceName == "windows-target-1"
+     | where DeviceName == "windows-hammed"
      | where FileName endswith ".zip"
      | order by Timestamp desc
      ```
-![Screenshot 2025-01-05 172716](https://github.com/user-attachments/assets/4fdf9cf4-4fed-4935-bfea-bb76d5b01144)
+<img width="594" alt="image" src="https://github.com/user-attachments/assets/e4090c92-0aec-41ea-afdb-fce641022000" />
+
+
 
      
 2. **⚙️ Process Analysis:**  
@@ -41,15 +43,15 @@ An employee named John Doe, working in a sensitive department, was recently plac
    - **Detection Query (KQL):**  
 
      ```kql
-     let VMName = "windows-target-1";
-     let specificTime = datetime(2025-01-05T21:48:40.6546522Z);
+     let VMName = "windows-hammed";
+     let specificTime = datetime(2025-04-22T19:31:31.3993643Z);
      DeviceProcessEvents
      | where Timestamp between ((specificTime - 2m) .. (specificTime + 2m))
      | where DeviceName == VMName
      | order by Timestamp desc
      | project Timestamp, DeviceName, ActionType, FileName, ProcessCommandLine
      ```
-![Screenshot 2025-01-05 180046](https://github.com/user-attachments/assets/12d51ef5-8b84-4b41-9123-99adcbd3edbe)
+<img width="667" alt="image" src="https://github.com/user-attachments/assets/99c62400-568e-45eb-9047-ee3edbdfc56b" />
 
 
    3. **🌐 Network Exfiltration Check:**  
@@ -58,7 +60,7 @@ An employee named John Doe, working in a sensitive department, was recently plac
    - **Detection Query (KQL):**  
 
      ```kql
-     let VMName = "windows-target-1";
+     let VMName = "windows-hammed";
      let specificTime = datetime(2025-01-05T21:48:40.6546522Z);
      DeviceProcessEvents
      | where Timestamp between ((specificTime - 2m) .. (specificTime + 2m))
@@ -85,7 +87,7 @@ An employee named John Doe, working in a sensitive department, was recently plac
 ---
 
 ### 🧑‍💻 **Next Steps**  
-1. Monitor John’s account activity for unusual access or privilege escalation.  
+1. Monitor Akintola’s account activity for unusual access or privilege escalation.  
 2. Implement DLP (Data Loss Prevention) measures to alert on potential data exfiltration.  
 3. Escalate findings to management and recommend a follow-up review of John's device for additional forensic artifacts.  
 
@@ -103,7 +105,7 @@ An employee named John Doe, working in a sensitive department, was recently plac
 ## Created By:
 - **Author Name**: Hammed Akintola
 - **Author Contact**: 
-- **Date**: Jan 5, 2025
+- **Date**: April 5, 2025
 
 ## Validated By:
 - **Reviewer Name**: Josh Madakor
