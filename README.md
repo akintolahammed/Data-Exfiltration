@@ -61,8 +61,8 @@ An employee named John Doe, working in a sensitive department, was recently plac
 
      ```kql
      let VMName = "windows-hammed";
-     let specificTime = datetime(2025-01-05T21:48:40.6546522Z);
-     DeviceProcessEvents
+     let specificTime = datetime(2025-04-22T19:31:31.3993643Z);
+     DeviceNetworkEvents
      | where Timestamp between ((specificTime - 2m) .. (specificTime + 2m))
      | where DeviceName == VMName
      | order by Timestamp desc
@@ -117,4 +117,4 @@ An employee named John Doe, working in a sensitive department, was recently plac
 ## Revision History:
 | **Version** | **Changes**                   | **Date**         | **Modified By**   |
 |-------------|-------------------------------|------------------|-------------------|
-| 1.0         | Initial draft                  | `Jan 5, 2025`  | `Hammed Akintola`   
+| 1.0         | Initial draft                  | `April 5, 2025`  | `Hammed Akintola`   
