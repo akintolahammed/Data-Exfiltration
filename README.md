@@ -107,10 +107,7 @@ An employee named John Doe, working in a sensitive department, was recently plac
 - **Author Contact**: 
 - **Date**: April 5, 2025
 
-## Validated By:
-- **Reviewer Name**: Josh Madakor
-- **Reviewer Contact**: https://www.linkedin.com/in/joshmadakor/
-- **Validation Date**: Jan , 2025
+
 
 ---
 
